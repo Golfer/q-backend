@@ -1,63 +1,29 @@
 AllCops:
-  Include:
-  - '**/Rakefile'
-  - '**/config.ru'
   Exclude:
-  - 'db/**/*'
-  - 'config/**/*'
-  - 'bin/**/*'
-  - 'spec/*_helper.rb'
-  - 'script/**/*'
+  - 'app/views/**/*'
+  - 'bin/*'
+  - 'db/schema.rb'
+  - 'db/migrate/*'
+  - 'log/**/*'
   - 'node_modules/**/*'
-  - '**/vendor/**/*'
-  - '**/config/**/*'
-  - './*'
-  - '**/docker/**/*'
-  TargetRubyVersion: 2.4
-  TargetRailsVersion: 5.1
+  - 'public/**/*'
+  - 'scripts/**/*'
+  - 'vendor/**/*'
+  - 'tmp/**/*'
+  - '.git/**/*'
 
-# Prefer &&/|| over and/or.
-Style/AndOr:
-  Enabled: true
+  TargetRubyVersion: 2.5
+  TargetRailsVersion: 5.2
 
 Documentation:
   Enabled: false
 
-# Do not use braces for hash literals when they are the last argument of a
-# method call.
-Style/BracesAroundHashParameters:
-  Enabled: true
+IndentationConsistency:
+  EnforcedStyle: 'rails'
 
-# Align `when` with `case`.
-Layout/CaseIndentation:
-  Enabled: true
+StringLiterals:
+  EnforcedStyle: single_quotes
 
-# Align comments with method definitions.
-Layout/CommentIndentation:
-  Enabled: true
-
-# No extra empty lines.
-Layout/EmptyLines:
-  Enabled: true
-
-# In a regular class definition, no empty lines around the body.
-Layout/EmptyLinesAroundClassBody:
-  Enabled: true
-
-# In a regular method definition, no empty lines around the body.
-Layout/EmptyLinesAroundMethodBody:
-  Enabled: true
-
-# In a regular module definition, no empty lines around the body.
-Layout/EmptyLinesAroundModuleBody:
-  Enabled: true
-
-# Use Ruby >= 1.9 syntax for hashes. Prefer { a: :b } over { :a => :b }.
-Style/HashSyntax:
-  Enabled: true
-
-Layout/IndentationConsistency:
-  Enabled: true
 
 # Two spaces, no tabs (for indentation).
 Layout/IndentationWidth:
@@ -180,3 +146,9 @@ Rails/SafeNavigation:
 
 Rails/SkipsModelValidations:
   Enabled: false
+
+
+
+inherit_gem:
+  rubocop-rails_config:
+    - config/rails.yml

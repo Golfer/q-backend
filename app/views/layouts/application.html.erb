@@ -10,6 +10,10 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render partial: 'shared/top_navigation' %>
+    <main role="main">
+      <%= yield %>
+    </main>
+    <%= render partial: 'shared/footer' %>
   </body>
 </html>

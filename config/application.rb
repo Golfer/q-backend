@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module QuotesBackside
   class Application < Rails::Application
+    config.application_name = Rails.application.class.parent_name
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
@@ -15,5 +16,14 @@ module QuotesBackside
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    #
+    config.generators do |g|
+      g.hidden_namespaces << :test_unit << :erb
+      g.test_framework  :rspec, fixture: false
+      g.orm             :active_record
+      g.template_engine :slim
+      g.stylesheets     false
+      g.javascripts     false
+    end
   end
 end

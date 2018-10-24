@@ -1,0 +1,5 @@
+div class="clearfix"
+  = link_to(new_resource_path, class: 'btn btn-secondary float-right') do
+    span Create new Resource
+
+= render partial: 'list_items', locals: {items: @resources, pagy: @pagy}

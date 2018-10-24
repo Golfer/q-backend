@@ -1,0 +1,9 @@
+= form_for @quotation do |f|
+  - if @quotation.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@quotation.errors.count, "error")} prohibited this quotation from being saved:"
+      ul
+        - @quotation.errors.full_messages.each do |message|
+          li = message
+
+  .actions = f.submit

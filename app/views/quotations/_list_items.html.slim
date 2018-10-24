@@ -1,0 +1,18 @@
+- if items && items.count > 0
+  table class="table"
+    thead class='thead-light'
+      tr
+        th Quotation
+        th #
+        th #
+        th #
+
+    tbody
+      - items.each do |item|
+        tr
+          td = item.body
+          td = link_to 'Show', item
+          td = link_to 'Edit', edit_quotation_path(item)
+          td = link_to 'Destroy', item, data: { confirm: 'Are you sure?' }, method: :delete
+
+= render partial: 'shared/pagination', locals: {items_count: items.count, pagy: pagy}

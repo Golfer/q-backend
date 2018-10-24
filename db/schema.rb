@@ -10,9 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2018_10_22_194503) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "authors", force: :cascade do |t|
+    t.string "full_name"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "link_to_wikipedia"
+    t.string "short_description"
+    t.text "full_description"
+    t.date "birthday"
+    t.date "date_of_death"
+    t.string "pseudonym"
+    t.boolean "publicated", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "data_quotations", force: :cascade do |t|
+    t.string "link_to_external_resource"
+    t.string "description"
+    t.integer "count_quotates"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "quotations", force: :cascade do |t|
+    t.text "body"
+    t.string "title"
+    t.boolean "publicate", default: false
+    t.datetime "publicated_date"
+    t.bigint "data_quotation_id"
+    t.bigint "author_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_quotations_on_author_id"
+    t.index ["data_quotation_id"], name: "index_quotations_on_data_quotation_id"
+  end
 
 end
