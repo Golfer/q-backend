@@ -40,9 +40,11 @@ jobs:
 
       steps:
       - checkout
-
+      - add_ssh_keys:
+          fingerprints:
+          - "59:f2:e7:5c:1c:4c:68:10:55:e7:fa:f6:25:8e:ee:55"
       - run:
-          name: Deploy Master to Heroku
+          name: Deploy Prod to Heroku
           command: |
             if [ "${CIRCLE_BRANCH}" == "dev" ]; then
               git push https://heroku:$HEROKU_API_KEY@git.heroku.com/dev-quotations.git
