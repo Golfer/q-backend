@@ -29,33 +29,33 @@ jobs:
       - run:
           name: Run RSpec
           command: bundle exec rspec
-    deploy:
-      machine:
-        enabled: true
-      working_directory: ~/quotations
+  deploy:
+    machine:
+      enabled: true
+    working_directory: ~/quotations
 
-      steps:
-      - checkout
-      - add_ssh_keys:
-          fingerprints:
-          - "59:f2:e7:5c:1c:4c:68:10:55:e7:fa:f6:25:8e:ee:55"
-      - run:
-          name: Deploy Prod to Heroku
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "dev" ]; then
-              git push https://heroku:$HEROKU_API_KEY@git.heroku.com/dev-quotations.git
-               master
-              heroku run rake assets:precompile --app dev-quotations
-              heroku run rake db:migrate --app dev-quotations
-              heroku restart --app dev-quotations
-            elif [ "${CIRCLE_BRANCH}" == "master" ]; then
-              git push https://heroku:$HEROKU_API_KEY@git.heroku.com/prod-quotations.git master
-              heroku run rake assets:precompile --app prod-quotations
-              heroku run rake db:migrate --app prod-quotations
-              heroku restart --app prod-quotations
-            else
-              CIRCLECI=true
-            fi
+    steps:
+    - checkout
+    - add_ssh_keys:
+        fingerprints:
+        - "59:f2:e7:5c:1c:4c:68:10:55:e7:fa:f6:25:8e:ee:55"
+    - run:
+        name: Deploy Prod to Heroku
+        command: |
+          if [ "${CIRCLE_BRANCH}" == "dev" ]; then
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/dev-quotations.git
+             master
+            heroku run rake assets:precompile --app dev-quotations
+            heroku run rake db:migrate --app dev-quotations
+            heroku restart --app dev-quotations
+          elif [ "${CIRCLE_BRANCH}" == "master" ]; then
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/prod-quotations.git master
+            heroku run rake assets:precompile --app prod-quotations
+            heroku run rake db:migrate --app prod-quotations
+            heroku restart --app prod-quotations
+          else
+            CIRCLECI=true
+          fi
 workflows:
   version: 2
   build-and-deploy:
