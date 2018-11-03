@@ -29,10 +29,10 @@ jobs:
           paths:
           - vendor/bundle
 
-          - run: bundle exec rake db:create db:schema:load
-          - run:
-              name: Run RSpec
-              command: bundle exec rspec
+      - run: bundle exec rake db:create db:schema:load
+      - run:
+          name: Run RSpec
+          command: bundle exec rspec
     deploy:
       machine:
         enabled: true
