@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:2.5.3-node-browsers
-      - image: circleci/postgres:circleci/10.5-alpine-postgis
+      - image: circleci/postgres:10.5-alpine-postgis
         environment:
           POSTGRES_USER: circleci
           POSTGRES_DB: quotations_t
