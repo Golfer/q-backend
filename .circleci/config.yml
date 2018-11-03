@@ -43,8 +43,7 @@ jobs:
         name: Deploy Prod to Heroku
         command: |
           if [ "${CIRCLE_BRANCH}" == "dev" ]; then
-            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/dev-quotations.git
-             master
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/dev-quotations.git master
             heroku run rake assets:precompile --app dev-quotations
             heroku run rake db:migrate --app dev-quotations
             heroku restart --app dev-quotations
