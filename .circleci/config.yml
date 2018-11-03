@@ -1,8 +1,4 @@
-# Ruby CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-ruby/ for more details
-#
-version: 2
+version: 2.0
 jobs:
   build:
     docker:
@@ -10,7 +6,7 @@ jobs:
       - image: circleci/postgres:10.5-alpine-postgis
         environment:
           POSTGRES_USER: circleci
-          POSTGRES_DB: quotations_t
+          POSTGRES_DB: quotations_test
     working_directory: ~/repo
 
     steps:
@@ -67,7 +63,7 @@ workflows:
     - build
     - deploy:
         requires:
-        - build
+          - build
         filters:
           branches:
             only:
