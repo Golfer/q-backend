@@ -27,7 +27,6 @@ dev:
   password: <%= ENV['QUOTATIONS_DEV_DATABASE_PASSWORD'] %>
 
 production:
-  <<: *default
   host: <%= ENV['QUOTATIONS_PROD_DATABASE_HOST'] %>
   database: <%= ENV['QUOTATIONS_PROD_DATABASE_NAME'] %>
   adapter: postgresql
