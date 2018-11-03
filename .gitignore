@@ -26,7 +26,6 @@
 /config/master.key
 
 # Rubymine
-/.idea
-
+.idea/
 coverage/
 /spec/fixtures/vcr

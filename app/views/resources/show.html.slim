@@ -1,6 +1,9 @@
-p#notice = notice
+= @resource.link_to_external_resource
+= render partial: 'quotations/list_items', locals: { items: @resource.quotations }
+= debug @resource.quotations.count
+/ p#notice = notice
 
 
-=> link_to 'Edit', edit_resource_path(@resource)
-'|
-=< link_to 'Back', resources_path
+/ => link_to 'Edit', edit_resource_path(@resource)
+/ '|
+/ =< link_to 'Back', resources_path

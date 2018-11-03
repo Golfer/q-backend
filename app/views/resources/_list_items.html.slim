@@ -11,8 +11,8 @@
       - items.each do |item|
         tr
           td = item.link_to_external_resource
-          / td = link_to 'Show', resource
-          td = link_to 'Edit', edit_resource_path(item)
+          td = link_to 'Show', resource_path(item)
+          / td = link_to 'Edit', edit_resource_path(item)
           / td = link_to 'Destroy', resource, data: { confirm: 'Are you sure?' }, method: :delete
 
 = render partial: 'shared/pagination', locals: {items_count: items.count, pagy: pagy}

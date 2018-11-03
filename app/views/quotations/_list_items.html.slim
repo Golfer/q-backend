@@ -12,7 +12,9 @@
         tr
           td = item.body
           td = link_to 'Show', item
-          td = link_to 'Edit', edit_quotation_path(item)
-          td = link_to 'Destroy', item, data: { confirm: 'Are you sure?' }, method: :delete
-
-= render partial: 'shared/pagination', locals: {items_count: items.count, pagy: pagy}
+          td 
+            / = link_to 'Edit', edit_quotation_path(item)
+          td 
+            / = link_to 'Destroy', item, data: { confirm: 'Are you sure?' }, method: :delete
+-unless local_assigns[:pagy].nil?
+  = render partial: 'shared/pagination', locals: {items_count: items.count, pagy: pagy}
