@@ -8,7 +8,7 @@ Bundler.require(*Rails.groups)
 
 module QuotesBackside
   class Application < Rails::Application
-    config.application_name = Rails.application.class.parent_name.upcase
+    config.application_name = "#{Rails.application.class.parent_name.upcase} [#{Rails.env.chars.first.upcase}]"
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
