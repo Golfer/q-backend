@@ -9,6 +9,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails', '~> 4.3.1'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
+gem 'puma_worker_killer'
 gem 'rails', '~> 5.2.0'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
@@ -23,6 +24,21 @@ gem 'font-awesome-sass', '~> 5.0', '>= 5.0.13'
 gem 'pagy'
 gem 'sass-rails', '~> 5.0.7'
 gem 'slim-rails', '~> 3.2'
+
+# backGround Services
+gem 'redis', '~> 4.0'
+gem 'sidekiq'
+
+gem 'storext', '~> 2.2.2'
+gem 'services'
+gem 'interactor-rails'
+
+# Backend
+gem 'active_model_serializers', '~> 0.10.8'
+
+# Authentication
+gem 'devise'
+gem 'pundit'
 
 group :development, :test do
   gem 'byebug'
