@@ -14,7 +14,10 @@ module Api
       private
 
         def records
-          @records ||= Quotation.reorder(title: :asc).page(params[:page] || 1).per(RESULTS_PER_PAGE)
+          @records ||= Quotation.reorder(title: :asc)
+                         .limit(1000)
+                         # .page(params[:page] || 1)
+                         # .per(RESULTS_PER_PAGE)
         end
     end
   end
