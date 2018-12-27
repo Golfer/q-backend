@@ -4,20 +4,20 @@ module Api
       attr_accessor :records
 
       def default_serializer_options
-        { serializer: namespace_for_serializer::QuotationSerializer }
+        {
+          serializer: namespace_for_serializer::QuotationSerializer,
+          each_serializer: namespace_for_serializer::QuotationSerializer
+        }
       end
 
       def query
-        render json: { data: records }, each_serializer: namespace_for_serializer::QuotationSerializer, status: :ok
+        respond_with records, root: :items
       end
 
       private
 
         def records
-          @records ||= Quotation.reorder(title: :asc)
-                         .limit(1000)
-                         # .page(params[:page] || 1)
-                         # .per(RESULTS_PER_PAGE)
+          @records ||= Quotation.includes(:author, :tags).reorder(title: :asc).limit(1000)
         end
     end
   end

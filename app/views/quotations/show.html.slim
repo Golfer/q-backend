@@ -1,5 +1,12 @@
 h3 = @quotation.body
 
+br
+h6= @quotation.author&.full_name
+hr
+
+- @quotation.tags.each do |tag|
+  span= tag&.name
+  br
 / => link_to 'Edit', edit_quotation_path(@quotation)
 / '|
 =< link_to 'Back', quotations_path

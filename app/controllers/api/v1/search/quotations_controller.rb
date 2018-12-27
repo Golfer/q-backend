@@ -15,10 +15,7 @@ module Api
         private
 
           def records
-            @records ||= Quotation.reorder(title: :asc)
-                           .search_by_name(params[:q])
-                           # .page(params[:page] || 1)
-                           # .per(RESULTS_PER_PAGE)
+            @records ||= Quotation.reorder(title: :asc).search_by_name(params[:q])
           end
       end
     end

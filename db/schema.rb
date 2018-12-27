@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_22_194503) do
+ActiveRecord::Schema.define(version: 2018_12_27_143549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,4 +51,19 @@ ActiveRecord::Schema.define(version: 2018_10_22_194503) do
     t.index ["data_quotation_id"], name: "index_quotations_on_data_quotation_id"
   end
 
+  create_table "quotations_tags", force: :cascade do |t|
+    t.bigint "quotation_id"
+    t.bigint "tag_id"
+    t.index ["quotation_id"], name: "index_quotations_tags_on_quotation_id"
+    t.index ["tag_id"], name: "index_quotations_tags_on_tag_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "quotations_tags", "quotations"
+  add_foreign_key "quotations_tags", "tags"
 end

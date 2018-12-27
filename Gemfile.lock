@@ -115,6 +115,8 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.3)
     docile (1.3.1)
+    domain_name (0.5.20180417)
+      unf (>= 0.0.5, < 1.0.0)
     equalizer (0.0.11)
     erubi (1.7.1)
     erubis (2.7.0)
@@ -146,6 +148,8 @@ GEM
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     hashdiff (0.3.7)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
     i18n (1.1.1)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
@@ -177,12 +181,16 @@ GEM
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (0.9.0)
+    mime-types (3.2.2)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2018.0812)
     mimemagic (0.3.2)
     mini_mime (1.0.1)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     msgpack (1.2.4)
     multi_json (1.13.1)
+    netrc (0.11.0)
     nio4r (2.3.1)
     nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
@@ -259,6 +267,10 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
+    rest-client (2.0.2)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     rspec-core (3.8.0)
       rspec-support (~> 3.8.0)
     rspec-expectations (3.8.2)
@@ -365,6 +377,9 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.19)
       execjs (>= 0.3.0, < 3)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.5)
     unicode-display_width (1.4.0)
     uniform_notifier (1.11.0)
     vcr (4.0.0)
@@ -407,7 +422,7 @@ DEPENDENCIES
   ffaker
   font-awesome-sass (~> 5.0, >= 5.0.13)
   foreman
-  interactor-rails
+  interactor-rails (~> 2.2.0)
   jbuilder (~> 2.5)
   jquery-rails (~> 4.3.1)
   listen (>= 3.0.5, < 3.2)
@@ -424,6 +439,8 @@ DEPENDENCIES
   rails (~> 5.2.0)
   rails-controller-testing
   redis (~> 4.0)
+  responders
+  rest-client
   rspec-rails (~> 3.8)
   rubocop-rails_config
   rubocop-rspec

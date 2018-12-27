@@ -1,4 +1,4 @@
 class Author < ApplicationRecord
   has_many :quotations
-  validates :first_name, presence: true
+  validates :full_name, presence: true
 end

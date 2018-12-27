@@ -16,6 +16,8 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'nokogiri'
 
+gem 'responders'
+
 # Run all
 gem 'foreman'
 
@@ -29,9 +31,11 @@ gem 'slim-rails', '~> 3.2'
 gem 'redis', '~> 4.0'
 gem 'sidekiq'
 
+gem 'rest-client'
+
 gem 'storext', '~> 2.2.2'
 gem 'services'
-gem 'interactor-rails'
+gem 'interactor-rails', '~> 2.2.0'
 
 # Backend
 gem 'active_model_serializers', '~> 0.10.8'
