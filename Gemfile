@@ -39,6 +39,7 @@ gem 'interactor-rails', '~> 2.2.0'
 
 # Backend
 gem 'active_model_serializers', '~> 0.10.8'
+gem 'quick_random_records'
 
 # Authentication
 gem 'devise'

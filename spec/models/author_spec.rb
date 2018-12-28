@@ -15,12 +15,12 @@ describe Author, type: :model do
       expect(subject).to be_valid
     end
 
-    it { expect(subject).to validate_presence_of(:first_name) }
+    it { expect(subject).to validate_presence_of(:full_name) }
 
     it 'is invalid without a link_to_external_resource' do
       author = Author.new(short_description: FFaker::Lorem.paragraphs(1).first)
       author.valid?
-      expect(author.errors[:first_name]).to include("can't be blank")
+      expect(author.errors[:full_name]).to include("can't be blank")
     end
   end
 end
