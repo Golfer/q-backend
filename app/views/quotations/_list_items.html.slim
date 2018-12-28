@@ -10,11 +10,19 @@
     tbody
       - items.each do |item|
         tr
-          td = item.body
+          td
+            = item.body
+            br
+            .row
+              span.col-md-6.pull-left
+                - item.tags.each do |tag|
+                  span.badge.badge-info= tag&.name
+              span.col-md-6.pull-right
+                strong.pull-right=item.author&.full_name
           td = link_to 'Show', item
           td 
             / = link_to 'Edit', edit_quotation_path(item)
-          td 
+          td
             / = link_to 'Destroy', item, data: { confirm: 'Are you sure?' }, method: :delete
 -unless local_assigns[:pagy].nil?
   = render partial: 'shared/pagination', locals: {items_count: items.count, pagy: pagy}
