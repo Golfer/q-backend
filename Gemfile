@@ -45,6 +45,8 @@ gem 'quick_random_records'
 gem 'devise'
 gem 'pundit'
 
+gem 'kaminari', '~>1.1.1'
+
 group :development, :test do
   gem 'byebug'
   gem 'factory_girl_rails', '~> 4.8.0', require: false

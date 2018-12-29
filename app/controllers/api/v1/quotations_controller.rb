@@ -11,13 +11,13 @@ module Api
       end
 
       def query
-        respond_with records, root: :items
+        respond_with records, meta: pagination_meta(records)
       end
 
       private
 
         def records
-          @records ||= Quotation.includes(:author, :tags).reorder(title: :asc).limit(1000)
+          @records ||= Quotation.includes(:author, :tags).reorder(title: :asc).page(params[:page] || 1).per(20)
         end
     end
   end
