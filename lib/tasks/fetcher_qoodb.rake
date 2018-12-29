@@ -9,7 +9,7 @@ namespace :fetcher do
       puts 'Fetcher: RUN'
       if tags.count > 0
         tags.each do |tag|
-          puts "Fetch TAG: #{tag}; /\ With Params[START_PAGE:-> #{start_page} /\ ONLY_CURRENT_PAGE:->  #{only_current_page}]"
+          puts "Fetch TAG: #{tag}; \n With Params[START_PAGE:-> #{start_page} \n ONLY_CURRENT_PAGE:->  #{only_current_page}]"
           Services::Goodread::Fetcher.new(tag: tag.strip, start_page: start_page, only_current_page: only_current_page).call
         end
       end
@@ -27,14 +27,14 @@ def log_data(data_range)
   count_authors = Author.where(created_at: data_range).count
   count_tags = Tag.where(created_at: data_range).count
 
-  puts "HAS BEEN Fetched: /\
-        Quotations: #{count_quotations} /\
-        Authors: #{count_authors} /\
+  puts "HAS BEEN Fetched: \n
+        Quotations: #{count_quotations} \n
+        Authors: #{count_authors} \n
         Tags: #{count_tags}"
 
-  logger.info "HAS BEEN Fetched: /\
-            Quotations: #{count_quotations} /\
-            Authors: #{count_authors} /\
+  logger.info "HAS BEEN Fetched: \n
+            Quotations: #{count_quotations} \n
+            Authors: #{count_authors} \n
             Tags: #{count_tags}"
 end
 
