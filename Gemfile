@@ -30,6 +30,7 @@ gem 'slim-rails', '~> 3.2'
 # backGround Services
 gem 'redis', '~> 4.0'
 gem 'sidekiq'
+gem 'sidekiq-scheduler'
 
 gem 'rest-client'
 
@@ -47,6 +48,7 @@ gem 'pundit'
 
 gem 'kaminari', '~>1.1.1'
 
+gem 'aasm'
 group :development, :test do
   gem 'byebug'
   gem 'factory_girl_rails', '~> 4.8.0', require: false

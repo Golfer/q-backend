@@ -24,7 +24,7 @@ module Api
     def set_namespace_for_serializer
       self.namespace_for_serializer = Api
     end
-    
+
     def pagination_meta(resource)
       {
         pagination:  {

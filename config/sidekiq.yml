@@ -1,0 +1,4 @@
+:schedule:
+  QuotationParser:
+    cron: '0 * * * * *'   # Runs once per minute
+    class: 'Schedulers::QuotationParser'

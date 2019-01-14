@@ -2,7 +2,7 @@ class QuotationsController < ApplicationController
   before_action :set_quotation, only: %I(show edit update destroy)
 
   def index
-    type_quotations = params[:type_quotations] || 'unpublicate'
+    type_quotations = params[:type_quotations] || 'record_init'
 
     @pagy, @quotations = pagy(Quotation.send(type_quotations.to_sym), items: Quotation::PER_PAGE)
   end
