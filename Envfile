@@ -4,10 +4,10 @@ variable :RAILS_MAX_THREADS, :string
 variable :RACK_ENV, :string
 variable :RAILS_ENV, :string
 
-variable :QUOTES_DB_HOST, :string
 variable :QUOTES_MAIL_NOREPLY_EMAIL, :string
 
 group :development, :test do
+    variable :QUOTES_DB_HOST, :string
     variable :QUOTATIONS_DB_NAME, :string
     variable :QUOTATIONS_DATABASE_USERNAME, :string
     variable :QUOTATIONS_DATABASE_PASSWORD, :string

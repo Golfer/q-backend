@@ -78,17 +78,17 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rubocop-rails_config', require: false
-  gem 'rubocop-rspec', require: false
-  gem 'rubycritic', require: false
+  gem 'rubocop-rspec',        require: false
+  gem 'rubycritic',           require: false
 
   # Deployment
-  gem 'capistrano',         require: false
-  gem 'capistrano-rvm',     require: false
-  gem 'capistrano-rails',   require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano3-puma',   require: false
-  gem 'capistrano-rails-collection'
-
+  gem 'capistrano',                  require: false
+  gem 'capistrano-rvm',              require: false
+  gem 'capistrano-rails',            require: false
+  gem 'capistrano-bundler',          require: false
+  gem 'capistrano3-puma',            require: false
+  gem 'capistrano-rails-collection', require: false
+  gem 'capistrano-rake',             require: false
 end
 
 group :test do
@@ -103,8 +103,8 @@ group :test do
   gem 'rspec-rails', '~> 3.8'
   gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
   gem 'simplecov', '~> 0.16.1', require: false
-  gem 'vcr'
-  gem 'webmock'
+  gem 'vcr',                    require: false
+  gem 'webmock',                require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

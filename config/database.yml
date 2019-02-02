@@ -1,5 +1,4 @@
 default: &default
-  host: <%= ENV['QUOTES_DB_HOST'] %>
   adapter: postgresql
   encoding: unicode
   pool: 5
@@ -9,6 +8,7 @@ default: &default
 
 development:
   <<: *default
+  host: <%= ENV['QUOTES_DB_HOST'] %>
   database: <%= ENV['QUOTATIONS_DB_NAME'] %>
 
 test:
