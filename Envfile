@@ -1,0 +1,33 @@
+# variable :REDIS_URL, :string, default: 'redis://localhost:6379'
+
+variable :RAILS_MAX_THREADS, :string
+variable :RACK_ENV, :string
+variable :RAILS_ENV, :string
+
+variable :QUOTES_DB_HOST, :string
+variable :QUOTES_MAIL_NOREPLY_EMAIL, :string
+
+group :development, :test do
+    variable :QUOTATIONS_DB_NAME, :string
+    variable :QUOTATIONS_DATABASE_USERNAME, :string
+    variable :QUOTATIONS_DATABASE_PASSWORD, :string
+end
+
+group :test do
+    variable :QUOTES_DB_NAME, :string
+end
+
+group :dev do
+    variable :QUOTATIONS_DEV_DATABASE_HOST, :string
+    variable :QUOTATIONS_DEV_DATABASE_NAME, :string
+    variable :QUOTATIONS_DEV_DATABASE_USERNAME, :string
+    variable :QUOTATIONS_DEV_DATABASE_PASSWORD, :string
+end
+
+group :production do
+  variable :SECRET_KEY_BASE, :string
+  variable :QUOTATIONS_PROD_DATABASE_HOST, :string
+  variable :QUOTATIONS_PROD_DATABASE_NAME, :string
+  variable :QUOTATIONS_PROD_DATABASE_USERNAME, :string
+  variable :QUOTATIONS_PROD_DATABASE_PASSWORD, :string
+end

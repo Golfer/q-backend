@@ -49,6 +49,11 @@ gem 'pundit'
 gem 'kaminari', '~>1.1.1'
 
 gem 'aasm'
+
+# ENV Variables
+gem 'dotenv-rails', '2.4.0'
+gem 'envied'
+
 group :development, :test do
   gem 'byebug'
   gem 'factory_girl_rails', '~> 4.8.0', require: false
@@ -75,6 +80,15 @@ group :development do
   gem 'rubocop-rails_config', require: false
   gem 'rubocop-rspec', require: false
   gem 'rubycritic', require: false
+
+  # Deployment
+  gem 'capistrano',         require: false
+  gem 'capistrano-rvm',     require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
+  gem 'capistrano-rails-collection'
+
 end
 
 group :test do

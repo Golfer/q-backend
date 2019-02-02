@@ -6,6 +6,6 @@ class DashboardsController < ApplicationController
   private
 
     def record_quotations
-      @record_quotations ||= Quotation.random_records(100) || []
+      @record_quotations ||= Quotation.any? ? Quotation.random_records(100) : []
     end
 end
