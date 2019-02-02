@@ -5,6 +5,7 @@
 
 set :stage, :production
 server '199.247.18.85', user: 'quotes-dply', roles: %w{app db web}
+set :rake_roles, [:db, :app]
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
