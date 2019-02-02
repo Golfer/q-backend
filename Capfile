@@ -15,4 +15,4 @@ install_plugin Capistrano::Puma::Monit, load_hooks: false  # Monit tasks without
 set :rvm_type, :user
 set :rvm_ruby_version, '2.5.3'
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
-Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
+Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }

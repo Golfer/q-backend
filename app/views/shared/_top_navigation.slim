@@ -1,0 +1,37 @@
+nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+  |
+  = link_to Rails.configuration.application_name, root_path, class: 'navbar-brand'
+  button.navbar-toggler aria-controls="navbarCollapse" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarCollapse" data-toggle="collapse" type="button"
+    span.navbar-toggler-icon
+  #navbarCollapse.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
+      - if current_user && current_user.is_admin?
+        li class="nav-item #{active_element_nav('resources')}"
+          |
+          = link_to 'Resources', resources_path, class: "btn nav-link"
+        li class="nav-item #{active_element_nav('guotations')}"
+          |
+          = link_to 'Guotations', quotations_path, class: "btn nav-link"
+      - if user_signed_in?
+        li
+          = link_to current_user.full_name.empty? ? current_user.email : current_user.full_name, edit_user_registration_path, class: "nav-link"
+        li
+          = link_to 'Log Out', destroy_user_session_path, method: :delete, class: "nav-link"
+      - else
+        li
+          = link_to 'Sign in', new_user_session_path, class: "nav-link"
+        li
+          = link_to 'Sign up', new_user_registration_path, class: "nav-link"
+      - if current_user
+        li.dropdown.profile-dropdown
+          a.dropdown-toggle data-toggle="dropdown" href="#"
+            / = image_tag current_user.avatar.url
+            span.d-none.d-md-block
+              = current_user.email
+              b.caret
+          ul.dropdown-menu.dropdown-menu-right
+            li
+              = link_to edit_user_path(current_user)
+              | Profile
+            li
+              = link_to('Logout', destroy_user_session_path, method: :delete)

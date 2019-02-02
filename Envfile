@@ -14,7 +14,9 @@ group :development, :test do
 end
 
 group :test do
-    variable :QUOTES_DB_NAME, :string
+    variable :QUOTATIONS_DB_NAME, :string
+    variable :QUOTATIONS_DATABASE_USERNAME, :string
+    variable :QUOTATIONS_DATABASE_PASSWORD, :string
 end
 
 group :dev do
