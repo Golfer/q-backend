@@ -105,6 +105,9 @@ GEM
     capistrano-rvm (0.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
+    capistrano-sidekiq (1.0.2)
+      capistrano (>= 3.9.0)
+      sidekiq (>= 3.4)
     capistrano3-puma (3.1.1)
       capistrano (~> 3.7)
       capistrano-bundler
@@ -400,6 +403,10 @@ GEM
       rufus-scheduler (~> 3.2)
       sidekiq (>= 3)
       tilt (>= 1.4.0)
+    simple_token_authentication (1.15.1)
+      actionmailer (>= 3.2.6, < 6)
+      actionpack (>= 3.2.6, < 6)
+      devise (>= 3.2, < 6)
     simplecov (0.16.1)
       docile (~> 1.1)
       json (>= 1.8, < 3)
@@ -486,6 +493,7 @@ DEPENDENCIES
   capistrano-rails-collection
   capistrano-rake
   capistrano-rvm
+  capistrano-sidekiq
   capistrano3-puma
   coffee-rails (~> 4.2)
   database_cleaner
@@ -527,6 +535,7 @@ DEPENDENCIES
   shoulda-matchers!
   sidekiq
   sidekiq-scheduler
+  simple_token_authentication (~> 1.0)
   simplecov (~> 0.16.1)
   slim-rails (~> 3.2)
   spring

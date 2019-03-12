@@ -45,6 +45,7 @@ gem 'quick_random_records'
 # Authentication
 gem 'devise'
 gem 'pundit'
+gem 'simple_token_authentication', '~> 1.0'
 
 gem 'kaminari', '~>1.1.1'
 
@@ -89,6 +90,7 @@ group :development do
   gem 'capistrano3-puma',            require: false
   gem 'capistrano-rails-collection', require: false
   gem 'capistrano-rake',             require: false
+  gem 'capistrano-sidekiq',          require: false
 end
 
 group :test do
