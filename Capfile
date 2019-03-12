@@ -6,6 +6,7 @@ require 'capistrano/bundler'
 require 'capistrano/rvm'
 
 require 'capistrano/puma'
+require 'capistrano/sidekiq'
 require 'capistrano/rails/collection'
 require 'capistrano/rake'
 

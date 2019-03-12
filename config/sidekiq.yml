@@ -1,3 +1,8 @@
+:concurrency: 1
+:queues:
+  - default
+:timeout: 15
+
 :schedule:
   QuotationParser:
     every: '360m' # Run Every 6 hours
